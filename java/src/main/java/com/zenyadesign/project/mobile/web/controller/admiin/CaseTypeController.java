@@ -27,11 +27,12 @@ public class CaseTypeController {
 	public CaseType create(
 			@RequestParam(value = "name", required = true) String name,
 			@RequestParam(value = "code", required = true) String code,
+			@RequestParam(value = "sortBy", required = false) long sortBy,
 			Model model) {
 		CaseType entity = caseTypeDao.findByCode(code);
 		CaseType result = null;
 		if(entity == null){
-			entity = new CaseType(name,code);
+			entity = new CaseType(name,code,sortBy);
 			entity.setCreateBy("system");
 			entity.setCreateDate(new Date());
 			result = caseTypeDao.save(entity);
@@ -45,12 +46,14 @@ public class CaseTypeController {
 			@RequestParam(value = "id", required = true) long id,
 			@RequestParam(value = "name", required = true) String name,
 			@RequestParam(value = "code", required = true) String code,
+			@RequestParam(value = "sortBy", required = false) long sortBy,
 			Model model) {
 		CaseType entity = caseTypeDao.findOne(id);
 		CaseType result = null;
 		if(entity!=null){
 			entity.setName(name);
 			entity.setCode(code);
+			entity.setSortBy(sortBy);
 			entity.setUpdateBy("system");
 			entity.setUpdateDate(new Date());
 			result = caseTypeDao.save(entity);

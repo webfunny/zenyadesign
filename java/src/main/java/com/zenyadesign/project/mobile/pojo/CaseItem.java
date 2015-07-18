@@ -46,11 +46,12 @@ public class CaseItem {
 	}
 	
 
-	public CaseItem(String name, String typeId, String img) {
+	public CaseItem(String name, String typeId, String img, long sortBy) {
 		super();
 		this.name = name;
 		this.typeId = typeId;
 		this.img = img;
+		this.sortBy = sortBy;
 	}
 
 

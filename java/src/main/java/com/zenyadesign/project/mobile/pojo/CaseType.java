@@ -40,9 +40,10 @@ public class CaseType {
 		
 	}
 	
-	public CaseType(String name,String code) {
+	public CaseType(String name,String code,long sortBy) {
 		this.name = name;
 		this.code = code;
+		this.sortBy = sortBy;
 	}
 
 	public long getId() {

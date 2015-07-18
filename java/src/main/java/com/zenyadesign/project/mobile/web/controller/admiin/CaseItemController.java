@@ -28,8 +28,9 @@ public class CaseItemController {
 			@RequestParam(value = "name", required = true) String name,
 			@RequestParam(value = "typeId", required = true) String typeId,
 			@RequestParam(value = "img", required = true) String img,
+			@RequestParam(value = "sortBy", required = false) long sortBy,
 			Model model) {
-		CaseItem entity = new CaseItem(name, typeId, img);
+		CaseItem entity = new CaseItem(name, typeId, img, sortBy);
 		entity.setCreateBy("system");
 		entity.setCreateDate(new Date());
 		CaseItem result = caseItemDao.save(entity);
@@ -43,6 +44,7 @@ public class CaseItemController {
 			@RequestParam(value = "name", required = true) String name,
 			@RequestParam(value = "typeId", required = true) String typeId,
 			@RequestParam(value = "img", required = true) String img,
+			@RequestParam(value = "sortBy", required = false) long sortBy,
 			Model model) {
 		CaseItem entity = caseItemDao.findOne(id);
 		CaseItem result = null;
@@ -50,6 +52,7 @@ public class CaseItemController {
 			entity.setName(name);
 			entity.setTypeId(typeId);
 			entity.setImg(img);
+			entity.setSortBy(sortBy);
 			entity.setUpdateBy("system");
 			entity.setUpdateDate(new Date());
 			result = caseItemDao.save(entity);
