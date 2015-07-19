@@ -149,13 +149,17 @@ var Work = React.createClass({
 			typeRows.push(<TypeRow data={data} key={data.id} />);
 		}.bind(this));
 		return (
-				<div style={{"float":"left","width":"100%"}}>
-					<table width="300" height="50px" border="0" align="center" style={{"margin-left":"0px","margin-top":"14px"}}>
+				<div style={{"float":"left","width":"100%","margin-top":"0px"}}>
+					<div style={{"float":"left"}}>
+					<table width="300" height="100%" border="0" align="center" style={{"margin-left":"0px","margin-top":"0px"}}>
 						{typeRows}
 					</table>
-					<table width="80%" border="0" align="center" style={{"text-align":"center","margin-left":"200px","margin-top":"-151px"}}>
+					</div>
+					<div style={{"float":"left"}}>
+					<table width="100%" height="100%" border="0" align="center" style={{"text-align":"center","margin-left":"0px","margin-top":"0px"}}>
 						{rows}
 					</table>
+					</div>
 				</div>
 		)
 	}  

@@ -10,5 +10,22 @@ window.toHome = function (url){
 	window.location.href = window.location.href;
 }
 
-loadModule("common/Header","frameHeader",{});
-loadModule("common/Footer","frameFooter",{});
+window.toAdmin = function (){
+	loadModule("common/Header","frameHeader",{});
+	loadModule("admin/CaseType","frameWork",{});
+	loadModule("common/Footer","frameFooter",{});
+}
+
+window.toHomePage = function (){
+	loadModule("common/Header","frameHeader",{});
+	loadModule("home/Work","frameWork",{});
+	loadModule("common/Footer","frameFooter",{});
+}
+
+function loadAdmin(){
+	loadModule("common/Header","frameHeader",{});
+	loadModule("admin/CaseType","frameWork",{});
+	loadModule("common/Footer","frameFooter",{});
+}
+
+toHomePage();
